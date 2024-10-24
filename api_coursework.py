@@ -15,17 +15,7 @@ class Connect_vk:
             'access_token': self.access_token,
             'v': self.version
             }
-        
-    def get_info(self, user_id):
-        url = f'{self.base_url}users.get'
-        params = {
-            **self.params,
-            'user_ids': user_id,
-            'fields':'status'
-            }
-        response = requests.get(url, params=params)
-        return response.json()
-    
+       
     def get_photo(self, user_id, count=5):
         url = f'{self.base_url}photos.get'
         params = {
